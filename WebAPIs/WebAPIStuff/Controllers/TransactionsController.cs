@@ -13,44 +13,44 @@ using WebAPIStuff.Repositories;
 
 namespace WebAPIStuff.Controllers
 {
-    public class CustomersController : ApiController
+    public class TransactionsController : ApiController
     {
-        private CustomerRepo db = new CustomerRepo();
+        private TransactionRepo db = new TransactionRepo();
 
-        // GET: api/Customers
-        public IQueryable<Customer> GetCustomers()
+        // GET: api/Transactions
+        public IQueryable<Transaction> GetTransactions()
         {
-            return  db.Customers;
+            return db.Transactions;
         }
 
-        // GET: api/Customers/5
-        [ResponseType(typeof(Customer))]
-        public IHttpActionResult GetCustomer(int id)
+        // GET: api/Transactions/5
+        [ResponseType(typeof(Transaction))]
+        public IHttpActionResult GetTransaction(int id)
         {
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            Transaction transaction = db.Transactions.Find(id);
+            if (transaction == null)
             {
                 return NotFound();
             }
 
-            return Ok(customer);
+            return Ok(transaction);
         }
 
-        // PUT: api/Customers/5
+        // PUT: api/Transactions/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutCustomer(int id, Customer customer)
+        public IHttpActionResult PutTransaction(int id, Transaction transaction)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != customer.Id)
+            if (id != transaction.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(customer).State = EntityState.Modified;
+            db.Entry(transaction).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace WebAPIStuff.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CustomerExists(id))
+                if (!TransactionExists(id))
                 {
                     return NotFound();
                 }
@@ -71,16 +71,16 @@ namespace WebAPIStuff.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Customers
-        [ResponseType(typeof(Customer))]
-        public IHttpActionResult PostCustomer(Customer customer)
+        // POST: api/Transactions
+        [ResponseType(typeof(Transaction))]
+        public IHttpActionResult PostTransaction(Transaction transaction)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Customers.Add(customer);
+            db.Transactions.Add(transaction);
 
             try
             {
@@ -88,7 +88,7 @@ namespace WebAPIStuff.Controllers
             }
             catch (DbUpdateException)
             {
-                if (CustomerExists(customer.Id))
+                if (TransactionExists(transaction.Id))
                 {
                     return Conflict();
                 }
@@ -98,23 +98,23 @@ namespace WebAPIStuff.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = customer.Id }, customer);
+            return CreatedAtRoute("DefaultApi", new { id = transaction.Id }, transaction);
         }
 
-        // DELETE: api/Customers/5
-        [ResponseType(typeof(Customer))]
-        public IHttpActionResult DeleteCustomer(int id)
+        // DELETE: api/Transactions/5
+        [ResponseType(typeof(Transaction))]
+        public IHttpActionResult DeleteTransaction(int id)
         {
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            Transaction transaction = db.Transactions.Find(id);
+            if (transaction == null)
             {
                 return NotFound();
             }
 
-            db.Customers.Remove(customer);
+            db.Transactions.Remove(transaction);
             db.SaveChanges();
 
-            return Ok(customer);
+            return Ok(transaction);
         }
 
         protected override void Dispose(bool disposing)
@@ -126,9 +126,9 @@ namespace WebAPIStuff.Controllers
             base.Dispose(disposing);
         }
 
-        private bool CustomerExists(int id)
+        private bool TransactionExists(int id)
         {
-            return db.Customers.Count(e => e.Id == id) > 0;
+            return db.Transactions.Count(e => e.Id == id) > 0;
         }
     }
 }
