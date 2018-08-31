@@ -193,7 +193,7 @@
     <Compile Include="Controllers\SharesController.cs" />
     <Compile Include="Controllers\StocksController.cs" />
     <Compile Include="Controllers\TransactionsController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\WalletsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -216,6 +216,7 @@
     <Compile Include="Repositories\ShareRepo.cs" />
     <Compile Include="Repositories\StockRepo.cs" />
     <Compile Include="Repositories\TransactionRepo.cs" />
+    <Compile Include="Repositories\WalletRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />

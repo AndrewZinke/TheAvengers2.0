@@ -8,11 +8,12 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using StockApplication.Models;
 using System.Runtime.Serialization;
 using System.Diagnostics;
+using WebAPIStuff.Repositories;
+using WebAPIStuff.Models;
 
-namespace StockApplication.Controllers
+namespace WebAPIStuff.Controllers
 {
 	[DataContract(Name = "Wallets")]
 	public class WalletsController : ApiController
@@ -102,25 +103,25 @@ namespace StockApplication.Controllers
 
 		// POST: api/Wallet
 		// POST a new transaction corresponding to wallet operations for current logged in customer
-		[HttpPost]
-		[Route("api/Transaction")]
-		[ResponseType(typeof(Transaction))]
-		public IHttpActionResult PostWalletTransaction(Transaction transaction)
-		{
-			if (!ModelState.IsValid)
-			{
-				return BadRequest(ModelState);
-			}
-			Debug.WriteLine("Transaction TransactionId: " + transaction.Id);
-			Debug.WriteLine("Transaction CustomerId: " + transaction.CustomerId);
-			Debug.WriteLine("Transaction WalletId: " + transaction.WalletId);
-			Debug.WriteLine("Transaction Description: " + transaction.Descr);
-			Debug.WriteLine("Transaction Amount: " + transaction.Amount);
-			db.Transactions.Add(transaction);
-			db.SaveChanges();
+		//[HttpPost]
+		//[Route("api/Transaction")]
+		//[ResponseType(typeof(Transaction))]
+		//public IHttpActionResult PostWalletTransaction(Transaction transaction)
+		//{
+		//	if (!ModelState.IsValid)
+		//	{
+		//		return BadRequest(ModelState);
+		//	}
+		//	Debug.WriteLine("Transaction TransactionId: " + transaction.Id);
+		//	Debug.WriteLine("Transaction CustomerId: " + transaction.CustomerId);
+		//	Debug.WriteLine("Transaction WalletId: " + transaction.WalletId);
+		//	Debug.WriteLine("Transaction Description: " + transaction.Descr);
+		//	Debug.WriteLine("Transaction Amount: " + transaction.Amount);
+		//	db.Transactions.Add(transaction);
+		//	db.SaveChanges();
 
-			return CreatedAtRoute("DefaultApi", new { id = transaction.Id }, transaction);
-		}
+		//	return CreatedAtRoute("DefaultApi", new { id = transaction.Id }, transaction);
+		//}
 
 		// DELETE: api/Wallets/5
 		/*[ResponseType(typeof(Wallet))]
