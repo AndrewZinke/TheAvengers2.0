@@ -24,5 +24,6 @@ import { TransactionComponent } from './transaction/transaction.component';
   ],
   providers: [],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }
