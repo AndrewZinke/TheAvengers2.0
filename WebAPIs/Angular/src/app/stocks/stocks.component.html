@@ -1,3 +1,8 @@
 <p>
   stocks works!
 </p>
+
+<h2>Avaliable Stocks</h2>
+<div *ngFor="let aStock of Stocks">
+  Id: {{aStock.Id}} => Name: {{aStock.name}} => Symbol: {{aStock.symbol}}
+</div>
