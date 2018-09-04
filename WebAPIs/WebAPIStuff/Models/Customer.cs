@@ -16,7 +16,7 @@ namespace WebAPIStuff.Models
         [Required]
         public string LastName { get; set; }
         [Required]
-        public string email { get; set; }
+        public string Email { get; set; }
         [Required]
         public bool IsActive { get; set; }
         public int WalletId { get; set; }

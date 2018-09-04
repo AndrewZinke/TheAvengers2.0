@@ -10,6 +10,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using WebAPIStuff.Models;
 using WebAPIStuff.Repositories;
+using System.Web.Http.Cors;
 
 namespace WebAPIStuff.Controllers
 {

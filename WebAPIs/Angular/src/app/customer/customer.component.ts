@@ -20,12 +20,12 @@ export class CustomerComponent implements OnInit {
 
   ngOnInit() {
     this.customerToAdd = new Customer();
-    this.customerToAdd.Id = 0;
-    this.customerToAdd.FirstName = "<<firstname>>";
-    this.customerToAdd.LastName = "<<lastname>>";
+    this.customerToAdd.FirstName = "firstname";
+    this.customerToAdd.LastName = "lastname";
+    this.customerToAdd.Email = "Email"
     
     // this.getCustomer();
-     this.getCustomers();
+    // this.getCustomers();
   }
 
   getCustomer() {
@@ -47,9 +47,6 @@ export class CustomerComponent implements OnInit {
   }
 
   addCustomer() {
-    // alert(this.customerToAdd.Id);
-    // alert(this.customerToAdd.Firstname);
-    // alert(this.customerToAdd.Lastname);
     this.customerService.addCustomer(this.customerToAdd)
       .subscribe(res => {
         this.getCustomers();

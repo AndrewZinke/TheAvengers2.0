@@ -14,7 +14,7 @@ import {Customer} from '../customer';
 @Injectable()
 export class CustomerService {
 
-  url: string = "http://localhost:57881/api/Customers";
+  url:string = "http://localhost:58962/api/Customers";
 
   customers: Observable<Customer[]>;
   customer: Observable<Customer>;
@@ -41,9 +41,11 @@ export class CustomerService {
   addCustomer(newCustomer: Customer) {
     const headers = new HttpHeaders().set('content-type', 'application/json');
     var body = {
-      Firstname: newCustomer.FirstName,
-      Lastname: newCustomer.LastName,
-      Id: newCustomer.Id
+      FirstName: newCustomer.FirstName,
+      LastName: newCustomer.LastName,
+      Email: newCustomer.Email,
+      WalletId: newCustomer.WalletId,
+      IsActive: true
     };
     return this.client.post<Customer>(this.url, body, {
       headers
