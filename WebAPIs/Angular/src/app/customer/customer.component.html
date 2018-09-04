@@ -1,3 +1,29 @@
+<h2>Customer</h2>
+
+ <div *ngFor="let customer of customers">
+  Id: {{customer.FirstName}}
+</div> 
+
+
+<!-- <div>
+    Id:
+   <input type="text" [(ngModel)]="customer.Id" /> 
+    FirstName: <input type="text" [(ngModel)]="customer.FirstName" /> 
+    LastLame: <input type="text" [(ngModel)]="customer.LastName" />
+    <input type="button" value="Edit Customer" (click)="updateCustomer()" /> 
+  </div> -->
+  
+<!-- <h2>List of Customers</h2>
+<div *ngFor="let aCustomer of customers" (click)="deleteCustomer(aCustomer.Id)">
+  Id: {{aCustomer.Id}} => Name: {{aCustomer.Lastname}}, {{aCustomer.Firstname}}
+</div>
+
+<div>
+  Id: <input type="text" [(ngModel)]="customerToAdd.Id" />
+  Firstname: <input type="text" [(ngModel)]="customerToAdd.Firstname" />
+  Lastname: <input type="text" [(ngModel)]="customerToAdd.Lastname" />
+  <input type="button" value="Add Customer" (click)="addCustomer()" />
+</div>
 <p>
-  customer works!
-</p>
+  {{newCustomer.Firstname}}
+</p> -->

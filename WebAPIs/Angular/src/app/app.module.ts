@@ -9,6 +9,7 @@ import { WalletComponent } from './wallet/wallet.component';
 import { StocksComponent } from './stocks/stocks.component';
 import { ShareComponent } from './share/share.component';
 import { TransactionComponent } from './transaction/transaction.component';
+import { CustomerService } from './services/customer.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TransactionComponent } from './transaction/transaction.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [CustomerService],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }

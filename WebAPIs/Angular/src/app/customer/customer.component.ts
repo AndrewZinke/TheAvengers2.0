@@ -21,10 +21,10 @@ export class CustomerComponent implements OnInit {
   ngOnInit() {
     this.customerToAdd = new Customer();
     this.customerToAdd.Id = 0;
+    this.customerToAdd.FirstName = "<<firstname>>";
     this.customerToAdd.LastName = "<<lastname>>";
     
-  //   this.getCustomer();
-    this.customerToAdd.FirstName = "<<firstname>>";
+     this.getCustomer();
      this.getCustomers();
   }
 
