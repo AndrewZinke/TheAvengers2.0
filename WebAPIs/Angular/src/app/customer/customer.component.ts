@@ -25,7 +25,7 @@ export class CustomerComponent implements OnInit {
     this.customerToAdd.Email = "Email"
     
     // this.getCustomer();
-    // this.getCustomers();
+     this.getCustomers();
   }
 
   getCustomer() {
