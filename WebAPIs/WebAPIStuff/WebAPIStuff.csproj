@@ -205,6 +205,10 @@
     <Compile Include="Migrations\201808241903567_DummyWallet.Designer.cs">
       <DependentUpon>201808241903567_DummyWallet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809041532438_ChangedConnection.cs" />
+    <Compile Include="Migrations\201809041532438_ChangedConnection.Designer.cs">
+      <DependentUpon>201809041532438_ChangedConnection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Share.cs" />
@@ -310,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808241903567_DummyWallet.resx">
       <DependentUpon>201808241903567_DummyWallet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809041532438_ChangedConnection.resx">
+      <DependentUpon>201809041532438_ChangedConnection.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

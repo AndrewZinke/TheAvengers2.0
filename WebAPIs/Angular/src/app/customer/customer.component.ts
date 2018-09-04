@@ -24,7 +24,7 @@ export class CustomerComponent implements OnInit {
     this.customerToAdd.FirstName = "<<firstname>>";
     this.customerToAdd.LastName = "<<lastname>>";
     
-     this.getCustomer();
+    // this.getCustomer();
      this.getCustomers();
   }
 
