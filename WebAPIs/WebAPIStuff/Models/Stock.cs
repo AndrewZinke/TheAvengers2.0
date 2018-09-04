@@ -24,7 +24,7 @@ namespace WebAPIStuff.Models
         public decimal change { get; set; }
         [Display(Name = "Percent Change")]
         public double perChange { get; set; }
-        public IList<Share> shares { get; set; }
+        public int shares { get; set; }
 
         public Stock()
         {

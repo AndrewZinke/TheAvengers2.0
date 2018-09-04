@@ -8,7 +8,7 @@ export class Stocks {
   high: number;
   change: number;
   perChange: number;
-  shares = []
+  shares: number;
 
   constructor() {}
 }
