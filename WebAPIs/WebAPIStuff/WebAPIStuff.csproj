@@ -215,6 +215,10 @@
     <Compile Include="Migrations\201809041532438_ChangedConnection.Designer.cs">
       <DependentUpon>201809041532438_ChangedConnection.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809041706021_Email.cs" />
+    <Compile Include="Migrations\201809041706021_Email.Designer.cs">
+      <DependentUpon>201809041706021_Email.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Share.cs" />
@@ -325,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809041532438_ChangedConnection.resx">
       <DependentUpon>201809041532438_ChangedConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809041706021_Email.resx">
+      <DependentUpon>201809041706021_Email.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

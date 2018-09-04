@@ -12,10 +12,12 @@ using System.Runtime.Serialization;
 using System.Diagnostics;
 using WebAPIStuff.Repositories;
 using WebAPIStuff.Models;
+using System.Web.Http.Cors;
 
 namespace WebAPIStuff.Controllers
 {
-	[DataContract(Name = "Wallets")]
+    //[EnableCors(origins: "http://localhost:58962/api/Customers", headers: "*", methods: "*")]
+    [DataContract(Name = "Wallets")]
 	public class WalletsController : ApiController
     {
         private WalletRepository db = new WalletRepository();
