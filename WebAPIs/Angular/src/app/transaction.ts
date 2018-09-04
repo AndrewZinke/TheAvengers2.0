@@ -1,10 +1,14 @@
-import {Customer} from "./customer"
+import { Customer } from "./customer";
 
 export class Transaction {
-    customerId:number;
-    id:number;
-    amount:number;
-    description:string;
+    Id:number;
+    CustomerId:number;
+    Customer:Customer;
+    Amount:number;
+    Description:string;
 
-    customer:Customer;
+    constructor(){
+        this.Customer = new Customer();
+    }
 }
+

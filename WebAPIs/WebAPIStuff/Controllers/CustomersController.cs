@@ -18,13 +18,15 @@ namespace WebAPIStuff.Controllers
         private CustomerRepo db = new CustomerRepo();
 
         // GET: api/Customers
+		[HttpGet]
         public IQueryable<Customer> GetCustomers()
         {
             return  db.Customers;
         }
 
-        // GET: api/Customers/5
-        [ResponseType(typeof(Customer))]
+		// GET: api/Customers/5
+		[HttpGet]
+		[ResponseType(typeof(Customer))]
         public IHttpActionResult GetCustomer(int id)
         {
             Customer customer = db.Customers.Find(id);
@@ -36,8 +38,9 @@ namespace WebAPIStuff.Controllers
             return Ok(customer);
         }
 
-        // PUT: api/Customers/5
-        [ResponseType(typeof(void))]
+		// PUT: api/Customers/5
+		[HttpPut]
+		[ResponseType(typeof(void))]
         public IHttpActionResult PutCustomer(int id, Customer customer)
         {
             if (!ModelState.IsValid)
@@ -71,8 +74,9 @@ namespace WebAPIStuff.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Customers
-        [ResponseType(typeof(Customer))]
+		// POST: api/Customers
+		[HttpPost]
+		[ResponseType(typeof(Customer))]
         public IHttpActionResult PostCustomer(Customer customer)
         {
             if (!ModelState.IsValid)
@@ -101,8 +105,9 @@ namespace WebAPIStuff.Controllers
             return CreatedAtRoute("DefaultApi", new { id = customer.Id }, customer);
         }
 
-        // DELETE: api/Customers/5
-        [ResponseType(typeof(Customer))]
+		// DELETE: api/Customers/5
+		[HttpDelete]
+		[ResponseType(typeof(Customer))]
         public IHttpActionResult DeleteCustomer(int id)
         {
             Customer customer = db.Customers.Find(id);

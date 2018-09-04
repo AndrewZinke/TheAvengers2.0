@@ -1,3 +1,58 @@
-<p>
-  wallet works!
-</p>
+<!--<h3>Hello, {{Customer.FirstName}}!</h3>-->
+<h1>Wallet Balance: ${{wallet.Balance}}</h1>
+
+<!--Add Transaction-->
+<div>
+  <input type="text" name="transactionid" placeholder="Transaction ID" [(ngModel)]="transaction.Id"><br>
+  <input type="text" name="credit/debit" placeholder="Enter Credit/Debit" [(ngModel)]="transaction.Amount"><br>
+  <input type="text" name="description" placeholder="Enter Short Description" [(ngModel)]="transaction.Description"><br>
+  <input type="text" name="customer" placeholder="Enter CustomerId" [(ngModel)]="transaction.CustomerId"><br>
+  <input type="button" value="Submit Transaction!" (click)="addTransactions()">
+</div>
+<br><br>
+
+<!--Update Wallet-->
+<div>
+  <input type="text" name="walletid" placeholder="Wallet ID" [(ngModel)]="wallet.Id"><br>
+  <input type="text" name="customerid" placeholder="Customer ID" [(ngModel)]="wallet.CustomerId"><br>
+  <input type="text" name="balance" placeholder="Balance" [(ngModel)]="wallet.Balance"><br>
+  <input type="button" value="Submit Wallet Update!" (click)="updateWallet()">
+</div>
+<br><br>
+
+<!--Add Customer-->
+<div>
+  <input type="text" name="customerid" placeholder="Customer ID" [(ngModel)]="customer.Id"><br>
+  <input type="text" name="fname" placeholder="FirstName" [(ngModel)]="customer.FirstName"><br>
+  <input type="text" name="lname" placeholder="Last Name" [(ngModel)]="customer.LastName"><br>
+  <input type="text" name="email" placeholder="Email" [(ngModel)]="customer.Email"><br>
+  <input type="text" name="isactive" placeholder="Active?" [(ngModel)]="customer.IsActive"><br>
+  <input type="button" value="Submit Customer!" (click)="addCustomer()">
+</div>
+<br><br>
+
+<!--Get Wallet Info-->
+<div>
+  <div>Wallet Id: {{wallet.Id}}</div><br>
+  <div>Customer Id: {{wallet.CustomerId}}</div><br>
+  <div>Balance: {{wallet.balance}}</div><br>
+</div>
+<br><br>
+
+<!--Get Customer Info-->
+<div>
+    <div>Customer Id: {{customer.Id}}</div><br>
+    <div>First Name: {{customer.FirstName}}</div><br>
+    <div>Last namme: {{customer.LastName}}</div><br>
+    <div>Email: {{customer.Email}}</div><br>
+    <div>IsActive: {{customer.IsActive}}</div><br>
+</div>
+<br><br>
+
+<!--Get Transaction Info-->
+<p *ngFor="let t of transactions">
+    Transaction ID: {{transaction.id}}
+    Amount: {{transaction.Amount}}
+    Description: {{transaction.Description}}
+</p>  
+

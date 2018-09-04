@@ -13,18 +13,20 @@ using WebAPIStuff.Repositories;
 
 namespace WebAPIStuff.Controllers
 {
-    public class TransactionsController : ApiController
+	public class TransactionsController : ApiController
     {
         private TransactionRepo db = new TransactionRepo();
 
-        // GET: api/Transactions
-        public IQueryable<Transaction> GetTransactions()
+		// GET: api/Transactions
+		[HttpGet]
+		public IQueryable<Transaction> GetTransactions()
         {
             return db.Transactions;
         }
 
-        // GET: api/Transactions/5
-        [ResponseType(typeof(Transaction))]
+		// GET: api/Transactions/5
+		[HttpGet]
+		[ResponseType(typeof(Transaction))]
         public IHttpActionResult GetTransaction(int id)
         {
             Transaction transaction = db.Transactions.Find(id);
@@ -36,8 +38,9 @@ namespace WebAPIStuff.Controllers
             return Ok(transaction);
         }
 
-        // PUT: api/Transactions/5
-        [ResponseType(typeof(void))]
+		// PUT: api/Transactions/5
+		[HttpPut]
+		[ResponseType(typeof(void))]
         public IHttpActionResult PutTransaction(int id, Transaction transaction)
         {
             if (!ModelState.IsValid)
@@ -71,8 +74,9 @@ namespace WebAPIStuff.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Transactions
-        [ResponseType(typeof(Transaction))]
+		// POST: api/Transactions
+		[HttpPost]
+		[ResponseType(typeof(Transaction))]
         public IHttpActionResult PostTransaction(Transaction transaction)
         {
             if (!ModelState.IsValid)
@@ -101,8 +105,9 @@ namespace WebAPIStuff.Controllers
             return CreatedAtRoute("DefaultApi", new { id = transaction.Id }, transaction);
         }
 
-        // DELETE: api/Transactions/5
-        [ResponseType(typeof(Transaction))]
+		// DELETE: api/Transactions/5
+		[HttpDelete]
+		[ResponseType(typeof(Transaction))]
         public IHttpActionResult DeleteTransaction(int id)
         {
             Transaction transaction = db.Transactions.Find(id);

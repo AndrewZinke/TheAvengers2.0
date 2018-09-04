@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { StocksComponent } from './stocks/stocks.component';
 import { CustomerComponent} from './customer/customer.component'
+import { WalletComponent } from './wallet/wallet.component';
 
 const routes: Routes = [
   { path: 'stocks', component: StocksComponent},
-  { path: 'customer', component: CustomerComponent}];
+  { path: 'customer', component: CustomerComponent},
+  { path: 'wallet', component: WalletComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

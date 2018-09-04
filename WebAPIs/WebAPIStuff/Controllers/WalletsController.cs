@@ -20,16 +20,17 @@ namespace WebAPIStuff.Controllers
     {
         private WalletRepository db = new WalletRepository();
 
-       /* // GET: api/Wallets
-        public IQueryable<Wallet> GetWallets()
-        {
-            return db.Wallets.AsQueryable();
-		}
-		*/
+		/* // GET: api/Wallets
+		 public IQueryable<Wallet> GetWallets()
+		 {
+			 return db.Wallets.AsQueryable();
+		 }
+		 */
 
-        // GET: api/Wallets/5
+		// GET: api/Wallets/5
 		// GET current logged in custoer's wallet
-        [ResponseType(typeof(Wallet))]
+		[HttpGet]
+		[ResponseType(typeof(Wallet))]
         public IHttpActionResult GetWallet(int id)
         {
             Wallet wallet = db.Wallets.Find(id);
@@ -43,6 +44,7 @@ namespace WebAPIStuff.Controllers
 
 		// PUT: api/Wallet/5
 		// PUT: Update the wallet's balance, Active State
+		[HttpPut]
 		[ResponseType(typeof(void))]
         public IHttpActionResult PutWallet(int id, Wallet wallet)
         {
@@ -85,6 +87,7 @@ namespace WebAPIStuff.Controllers
 
 		// POST: api/Wallets
 		// POST a new wallet if it does not exist for current logged in customer
+		[HttpPost]
 		[ResponseType(typeof(Wallet))]
         public IHttpActionResult PostWallet(Wallet wallet)
         {
