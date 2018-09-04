@@ -1,6 +1,14 @@
 <p>
   stocks works!
 </p>
+<h2>Add A Stock</h2>
+<div>
+  Name: <input type="text" [(ngModel)]="newStock.name" />
+  Symbol: <input type="text" [(ngModel)]="customerToAdd.Firstname" />
+  Price Per Share: <input type="text" [(ngModel)]="customerToAdd.Lastname" />
+  <input type="button" value="Add Customer" (click)="addCustomer()" />
+</div>
+
 
 <h2>Avaliable Stocks</h2>
 <div *ngFor="let aStock of Stocks">
