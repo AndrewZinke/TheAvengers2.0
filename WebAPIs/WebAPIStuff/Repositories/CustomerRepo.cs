@@ -10,7 +10,7 @@ namespace WebAPIStuff.Repositories
     public class CustomerRepo : DbContext
     {
         public CustomerRepo()
-            :base("name = DefaultString")
+            :base("name=DefaultString")
         {
 
         }

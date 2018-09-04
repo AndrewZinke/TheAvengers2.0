@@ -211,6 +211,10 @@
     <Compile Include="Migrations\201808241903567_DummyWallet.Designer.cs">
       <DependentUpon>201808241903567_DummyWallet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809041532438_ChangedConnection.cs" />
+    <Compile Include="Migrations\201809041532438_ChangedConnection.Designer.cs">
+      <DependentUpon>201809041532438_ChangedConnection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Share.cs" />
@@ -263,7 +267,9 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -316,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808241903567_DummyWallet.resx">
       <DependentUpon>201808241903567_DummyWallet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809041532438_ChangedConnection.resx">
+      <DependentUpon>201809041532438_ChangedConnection.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
