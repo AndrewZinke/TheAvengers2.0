@@ -27,7 +27,7 @@ export class WalletService {
     var body_w = {
       Id: updateWallet.Id,
       Balance: updateWallet.Balance,
-      IsActive: updateWallet.IsActive,
+      IsActive: true,
       CustomerId: updateWallet.CustomerId,
     };
     //Call addTransactions
@@ -52,7 +52,6 @@ export class WalletService {
     const headers = new HttpHeaders().set('content-type', 'application/json');
     //headers.set('method','POST');
     var body = {
-      Id: newtransaction.Id,
       CustomerId: newtransaction.CustomerId,
       Amount: newtransaction.Amount,
       Description: newtransaction.Description,

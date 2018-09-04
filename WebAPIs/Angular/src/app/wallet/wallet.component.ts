@@ -19,10 +19,16 @@ export class WalletComponent implements OnInit {
   constructor(private walletService: WalletService) { }
 
   ngOnInit() {
-    //console.log("I am here: Wallet Component");
     this.wallet = new Wallet();
     this.transaction = new Transaction();
-    this.customer = new Customer();
+
+    //if user is logged in AND has an activated wallet, get data and instantiate wallet object with his/her info
+    this.wallet = <Wallet>{
+      Id: 1,
+      Balance: 200,
+      CustomerId: 8,
+      Customer: {Id: 8,FirstName: "Jeremy",LastName: "Ariche",Email: "jeariche@gmail.com",IsActive: true},
+      IsActive: true };
    // this.getTransactions()
   }
 
@@ -35,6 +41,7 @@ export class WalletComponent implements OnInit {
   updateWallet(){
     this.walletService.updateWallet(this.wallet).subscribe((res)=>{
     //this.getTransactions();
+    //Create transaction object
     alert("Wallet Updated successfully !!")
     });
   }

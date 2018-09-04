@@ -1,4 +1,4 @@
-<!--<h3>Hello, {{Customer.FirstName}}!</h3>-->
+<h3>Hello, {{wallet.Customer.FirstName}}!</h3>
 <h1>Wallet Balance: ${{wallet.Balance}}</h1>
 
 <!--Add Transaction-->
@@ -21,7 +21,7 @@
 <br><br>
 
 <!--Add Customer-->
-<div>
+<!-- <div>
   <input type="text" name="customerid" placeholder="Customer ID" [(ngModel)]="customer.Id"><br>
   <input type="text" name="fname" placeholder="FirstName" [(ngModel)]="customer.FirstName"><br>
   <input type="text" name="lname" placeholder="Last Name" [(ngModel)]="customer.LastName"><br>
@@ -29,7 +29,7 @@
   <input type="text" name="isactive" placeholder="Active?" [(ngModel)]="customer.IsActive"><br>
   <input type="button" value="Submit Customer!" (click)="addCustomer()">
 </div>
-<br><br>
+<br><br> -->
 
 <!--Get Wallet Info-->
 <div>
@@ -40,14 +40,14 @@
 <br><br>
 
 <!--Get Customer Info-->
-<div>
+<!-- <div>
     <div>Customer Id: {{customer.Id}}</div><br>
     <div>First Name: {{customer.FirstName}}</div><br>
     <div>Last namme: {{customer.LastName}}</div><br>
     <div>Email: {{customer.Email}}</div><br>
     <div>IsActive: {{customer.IsActive}}</div><br>
 </div>
-<br><br>
+<br><br> -->
 
 <!--Get Transaction Info-->
 <p *ngFor="let t of transactions">

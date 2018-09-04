@@ -7,14 +7,18 @@ using WebAPIStuff.Models;
 
 namespace WebAPIStuff.Repositories
 {
-    public class CustomerRepo : DbContext
+    public class StockDb : DbContext
     {
-        public CustomerRepo()
+        public StockDb()
             :base("name=DefaultString")
         {
 
         }
 
         public DbSet<Customer> Customers { get; set; }
-    }
+		public DbSet<Stock> Stocks { get; set; }
+		public DbSet<Wallet> Wallets { get; set; }
+		public DbSet<Share> Shares { get; set; }
+		public DbSet<Transaction> Transactions { get; set; }
+	}
 }

@@ -14,9 +14,10 @@ using System.Web.Http.Cors;
 
 namespace WebAPIStuff.Controllers
 {
+	[EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
 	public class TransactionsController : ApiController
     {
-        private TransactionRepo db = new TransactionRepo();
+        private StockDb db = new StockDb();
 
 		// GET: api/Transactions
 		[HttpGet]

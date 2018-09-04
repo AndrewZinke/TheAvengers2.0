@@ -16,7 +16,7 @@ namespace WebAPIStuff.Controllers
 {
     public class SharesController : ApiController
     {
-        private ShareRepo db = new ShareRepo();
+        private StockDb db = new StockDb();
 
         // GET: api/Shares
         public IQueryable<Share> GetShares()

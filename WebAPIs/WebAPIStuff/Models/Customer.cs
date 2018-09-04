@@ -19,8 +19,6 @@ namespace WebAPIStuff.Models
         public string Email { get; set; }
         [Required]
         public bool IsActive { get; set; }
-        public int WalletId { get; set; }
-        public virtual Wallet Wallet { get; set; }
     }
 
 }

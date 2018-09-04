@@ -16,7 +16,7 @@ namespace WebAPIStuff.Controllers
 {
     public class StocksController : ApiController
     {
-        private StockRepo db = new StockRepo();
+        private StockDb db = new StockDb();
 
         // GET: api/Stocks
         public IQueryable<Stock> GetStocks()

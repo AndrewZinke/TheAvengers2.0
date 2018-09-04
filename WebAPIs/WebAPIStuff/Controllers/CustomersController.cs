@@ -17,7 +17,7 @@ namespace WebAPIStuff.Controllers
     [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class CustomersController : ApiController
     {
-        private CustomerRepo db = new CustomerRepo();
+        private StockDb db = new StockDb();
 
         // GET: api/Customers
 		[HttpGet]

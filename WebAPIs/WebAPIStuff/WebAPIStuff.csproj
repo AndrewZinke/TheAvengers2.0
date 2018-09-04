@@ -219,6 +219,22 @@
     <Compile Include="Migrations\201809041706021_Email.Designer.cs">
       <DependentUpon>201809041706021_Email.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809041922106_ChangedWallet.cs" />
+    <Compile Include="Migrations\201809041922106_ChangedWallet.Designer.cs">
+      <DependentUpon>201809041922106_ChangedWallet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809041952125_NoWalletId.cs" />
+    <Compile Include="Migrations\201809041952125_NoWalletId.Designer.cs">
+      <DependentUpon>201809041952125_NoWalletId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809041959426_fixedstupid.cs" />
+    <Compile Include="Migrations\201809041959426_fixedstupid.Designer.cs">
+      <DependentUpon>201809041959426_fixedstupid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809042029153_RemovedRepos.cs" />
+    <Compile Include="Migrations\201809042029153_RemovedRepos.Designer.cs">
+      <DependentUpon>201809042029153_RemovedRepos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Share.cs" />
@@ -226,7 +242,7 @@
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Models\Wallet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\CustomerRepo.cs" />
+    <Compile Include="Repositories\StockDb.cs" />
     <Compile Include="Repositories\ShareRepo.cs" />
     <Compile Include="Repositories\StockRepo.cs" />
     <Compile Include="Repositories\TransactionRepo.cs" />
@@ -332,6 +348,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809041706021_Email.resx">
       <DependentUpon>201809041706021_Email.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809041922106_ChangedWallet.resx">
+      <DependentUpon>201809041922106_ChangedWallet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809041952125_NoWalletId.resx">
+      <DependentUpon>201809041952125_NoWalletId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809041959426_fixedstupid.resx">
+      <DependentUpon>201809041959426_fixedstupid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809042029153_RemovedRepos.resx">
+      <DependentUpon>201809042029153_RemovedRepos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

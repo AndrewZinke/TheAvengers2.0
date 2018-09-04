@@ -16,11 +16,11 @@ using System.Web.Http.Cors;
 
 namespace WebAPIStuff.Controllers
 {
-    //[EnableCors(origins: "http://localhost:58962/api/Customers", headers: "*", methods: "*")]
-    [DataContract(Name = "Wallets")]
+	[EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
+	[DataContract(Name = "Wallets")]
 	public class WalletsController : ApiController
     {
-        private WalletRepository db = new WalletRepository();
+        private StockDb db = new StockDb();
 
 		/* // GET: api/Wallets
 		 public IQueryable<Wallet> GetWallets()
@@ -35,7 +35,7 @@ namespace WebAPIStuff.Controllers
 		[ResponseType(typeof(Wallet))]
         public IHttpActionResult GetWallet(int id)
         {
-            Wallet wallet = db.Wallets.Find(id);
+			Wallet wallet = db.Wallets.Find(id);
             if (wallet == null)
             {
                 return NotFound();
@@ -60,19 +60,19 @@ namespace WebAPIStuff.Controllers
                 return BadRequest();
             }
 
-			Debug.WriteLine("Wallet Id Count: " + db.Wallets.Count());
+			//Debug.WriteLine("Wallet Id Count: " + _repo.Wallets.Count());
 			Debug.WriteLine("Wallet Id: " + wallet.Id);
 			Debug.WriteLine("Wallet CustomerId: " + wallet.CustomerId);
 			Debug.WriteLine("Wallet Balance: " + wallet.Balance);
 			Debug.WriteLine("Wallet Activite: " + wallet.IsActive);
 
-			db.Entry(wallet).State = EntityState.Modified;
-
             try
             {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
+				db.Entry(wallet).State = EntityState.Modified;
+				db.SaveChanges();
+
+			}
+			catch (DbUpdateConcurrencyException)
             {
                 if (!WalletExists(id))
                 {
@@ -98,7 +98,7 @@ namespace WebAPIStuff.Controllers
                 return BadRequest(ModelState);
             }
 			//Manually autoincrement wallet id
-			wallet.Id = db.Wallets.Count() + 1;
+		//	wallet.Id = db.Wallets.Count() + 1;
 
 			db.Wallets.Add(wallet);
             db.SaveChanges();
