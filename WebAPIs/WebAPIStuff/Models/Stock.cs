@@ -26,14 +26,14 @@ namespace WebAPIStuff.Models
         public double perChange { get; set; }
         public int shares { get; set; }
 
-        public Stock()
-        {
+        //public Stock()
+        //{
 
-        }
+        //}
 
-        public void addShare(Share share)
-        {
-            shares.Add(share);
-        }
+        //public void addShare(Share share)
+        //{
+        //    shares.Add(share);
+        //}
     }
 }

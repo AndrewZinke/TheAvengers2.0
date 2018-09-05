@@ -7,13 +7,13 @@ namespace WebAPIStuff.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class RemovedRepos : IMigrationMetadata
+    public sealed partial class idk : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RemovedRepos));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(idk));
         
         string IMigrationMetadata.Id
         {
-            get { return "201809042029153_RemovedRepos"; }
+            get { return "201809050306539_idk"; }
         }
         
         string IMigrationMetadata.Source
