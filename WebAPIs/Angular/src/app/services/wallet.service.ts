@@ -20,7 +20,8 @@ export class WalletService {
   constructor(private client: HttpClient) { }
 
   //Wallet Operations
-  updateWallet(updateWallet: Wallet){
+  updateWalletBalance(updateWallet: Wallet){
+    this.url_w = "http://localhost:58962/api/Wallets";
     this.url_w += `/${updateWallet.Id}`;
     //Update wallet information by wallet Id
     const headers = new HttpHeaders().set('content-type', 'application/json');
@@ -34,7 +35,38 @@ export class WalletService {
     return this.client.put<Wallet>(this.url_w, body_w, { headers });
   }
 
+  updateWalletActive(updateWallet: Wallet){
+    this.url_w = "http://localhost:58962/api/Wallets";
+    this.url_w += `/${updateWallet.Id}`;
+    //Update wallet information by wallet Id
+    const headers = new HttpHeaders().set('content-type', 'application/json');
+    var body_w = {
+      Id: updateWallet.Id,
+      Balance: updateWallet.Balance,
+      IsActive: true,
+      CustomerId: updateWallet.CustomerId,
+    };
+    //Call addTransactions
+    return this.client.put<Wallet>(this.url_w, body_w, { headers });
+  }
+
+  updateWalletDeactive(updateWallet: Wallet){
+    this.url_w = "http://localhost:58962/api/Wallets";
+    this.url_w += `/${updateWallet.Id}`;
+    //Update wallet information by wallet Id
+    const headers = new HttpHeaders().set('content-type', 'application/json');
+    var body_w = {
+      Id: updateWallet.Id,
+      Balance: updateWallet.Balance,
+      IsActive: false,
+      CustomerId: updateWallet.CustomerId,
+    };
+    //Call addTransactions
+    return this.client.put<Wallet>(this.url_w, body_w, { headers });
+  }
+
   getWallet(id){
+    this.url_w = "http://localhost:58962/api/Wallets";
     this.url_w += `/${id}`;
     //Get Transactions for current customer
     return this.client.get<Transaction[]>(this.url_t);
@@ -42,12 +74,14 @@ export class WalletService {
 
   //Transaction Operations
   getTransactions(c_id){
+    this.url_t = "http://localhost:58962/api/Transactions";
     this.url_t += `/${c_id}`;
     //Get Transactions for current customer
     return this.client.get<Transaction[]>(this.url_t);
   }
 
   addTransactions(newtransaction:Transaction):Observable<Transaction>{
+    this.url_t = "http://localhost:58962/api/Transactions";
     //Add transaction for current user
     const headers = new HttpHeaders().set('content-type', 'application/json');
     //headers.set('method','POST');
@@ -66,12 +100,14 @@ export class WalletService {
 
   //Customer Operations
   getCustomer(id){
+    this.url_c = "http://localhost:58962/api/Customers";
     this.url_c += `/${id}`;
     //Get Transactions for current customer
     return this.client.get<Customer>(this.url_c);
   }
 
   addCustomer(newCustomer:Customer){
+    this.url_c = "http://localhost:58962/api/Customers";
     const headers = new HttpHeaders().set('content-type', 'application/json');
     var body = {
       Firstname: newCustomer.FirstName,

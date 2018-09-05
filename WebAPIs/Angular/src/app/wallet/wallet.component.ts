@@ -15,20 +15,22 @@ export class WalletComponent implements OnInit {
   wallet:Wallet;
   transactions:Transaction[];
   transaction: Transaction;
-  customer: Customer;
+  active: boolean = false;
+  //customer: Customer;
+  signedcredit:string;
   constructor(private walletService: WalletService) { }
 
   ngOnInit() {
     this.wallet = new Wallet();
     this.transaction = new Transaction();
-
+    this.signedcredit = "0";
     //if user is logged in AND has an activated wallet, get data and instantiate wallet object with his/her info
     this.wallet = <Wallet>{
       Id: 1,
       Balance: 200,
       CustomerId: 8,
       Customer: {Id: 8,FirstName: "Jeremy",LastName: "Ariche",Email: "jeariche@gmail.com",IsActive: true},
-      IsActive: true };
+      IsActive: this.active};
    // this.getTransactions()
   }
 
@@ -38,11 +40,32 @@ export class WalletComponent implements OnInit {
     });
   }
 
-  updateWallet(){
-    this.walletService.updateWallet(this.wallet).subscribe((res)=>{
+  updateWalletBalance(){
+    
+    this.wallet.Balance = (parseFloat(this.signedcredit) > this.wallet.Balance)? 0 : this.wallet.Balance + parseFloat(this.signedcredit);
+    console.log(this.wallet.Balance);
+    this.walletService.updateWalletBalance(this.wallet).subscribe((res)=>{
     //this.getTransactions();
     //Create transaction object
     alert("Wallet Updated successfully !!")
+    });
+  }
+
+  updateWalletActive(){
+    this.active = true;
+    this.walletService.updateWalletActive(this.wallet).subscribe((res)=>{
+    //this.getTransactions();
+    console.log(this.wallet.IsActive);
+    alert("Wallet updated successfully !!")
+    });
+  }
+
+  updateWalletDeactive(){
+    this.active = false;
+    this.walletService.updateWalletDeactive(this.wallet).subscribe((res)=>{
+    //this.getTransactions();
+    console.log(this.wallet.IsActive);
+    alert("Wallet updated successfully !!")
     });
   }
 
@@ -61,20 +84,20 @@ export class WalletComponent implements OnInit {
     });
   }
 
-  getCustomer(){
-    this.walletService.getCustomer(this.customer.Id).subscribe((c)=>{
-    console.log(c);
-    this.customer = c;
-    console.log(this.customer);
-    });
-  }
+  // getCustomer(){
+  //   this.walletService.getCustomer(this.customer.Id).subscribe((c)=>{
+  //   console.log(c);
+  //   this.customer = c;
+  //   console.log(this.customer);
+  //   });
+  // }
 
-  addCustomer(){
-    this.walletService.addCustomer(this.customer).subscribe((res)=>{
-      //this.getCustomer();
-      alert('Customer added successfully!');
-    });
-  }
+  // addCustomer(){
+  //   this.walletService.addCustomer(this.customer).subscribe((res)=>{
+  //     //this.getCustomer();
+  //     alert('Customer added successfully!');
+  //   });
+  // }
 
 }
 
