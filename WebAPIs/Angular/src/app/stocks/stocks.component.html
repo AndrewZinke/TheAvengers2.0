@@ -1,7 +1,33 @@
 <div class="container">
+  <h2>Avaliable Stocks</h2>
+  <div>
+    <table class="table table-striped">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Symbol</th>
+        <th scope="col">Price Per Share</th>
+        <th scope="col">High</th>
+        <th scope="col">Low</th>
+        <th scope="col">Shares</th>
+      </tr>
+      <tr *ngFor="let aStock of stocks">
+        <td>{{aStock.name}}</td>
+        <td>{{aStock.symbol}}</td>
+        <td>{{aStock.PPS}}</td>
+        <td>{{aStock.high}}</td>
+        <td>{{aStock.low}}</td>
+        <td>{{aStock.shares}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div style="margin:2em"></div>
+
+<div class="container">
   <h2>Add A Stock</h2>
   <form>
-    <div class="form-group">
+    <div class="form-group container">
       <div class="col-xs-3">
         <label for="name">Name</label>
         <input type="text" class="form-control" id="name" placeholder="JAL Inc." [(ngModel)]="newStock.name" name="name" /> <br />
@@ -27,11 +53,8 @@
         <input type="number" class="form-control" id="low" [(ngModel)]="newStock.low" name="low" />
       </div><br />
     </div>
-    <input type="button" class="btn btn-dark" value="Add Stock" (click)="addStock()" />
+    <input type="button" class="btn btn-dark" style="margin-left:1em" value="Add Stock" (click)="addStock()" />
   </form>
-
-  <h2>Avaliable Stocks</h2>
-  <div *ngFor="let aStock of stocks">
-    Id: {{aStock.Id}} => Name: {{aStock.name}} => Symbol: {{aStock.symbol}}
-  </div>
 </div>
+
+

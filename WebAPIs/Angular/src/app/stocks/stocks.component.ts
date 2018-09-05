@@ -25,6 +25,8 @@ export class StocksComponent implements OnInit {
     this.newStock.high = 0.0;
     this.newStock.low = 0.0;
     this.newStock.shares = 0;
+
+    this.getStocks();
   }
 
   getStock(id) {

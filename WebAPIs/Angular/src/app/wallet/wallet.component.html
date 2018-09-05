@@ -1,105 +1,36 @@
-<!-- <style>
-  .container{
-    background-color:gainsboro;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
-    width: 50%;
-  }
+<div>
 
-  .row{
-    float: left;
-    width: 100%;
-  }
-
-  .col-25{
-    float: left;
-    width: 25%;
-  }
-
-  .col-75{
-    float: left;
-    width: 75%;
-  }
-  .input["type=text"]{
-
-  }
-</style> -->
-
-
-
-<div class="container">
-    <h3>Hello, {{wallet.Customer.FirstName}}!</h3>
-    <h1>Wallet Balance: ${{wallet.Balance}}</h1>
 </div>
-
-<div class="container">
-  <div class="row">
-      <div class="col-75">
-          <input type="text" name="credit/debit" placeholder="Enter Credit/Debit" ngDisabled="!this.wallet.IsActive" [(ngModel)]="signedcredit">
-      </div>
-      <div class="col-25">
-          <input type="button" value="Submit!" ngDisabled="!this.wallet.IsActive" (click)="updateWalletBalance()">
-      </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-        <input type="button" value="Deactivate Account!" (click)="updateWalletDeactive()">
-    </div>
-    <div class="col-25">
-        <input type="button" value="Activate Account!" (click)="updateWalletActive()">
-    </div>
-  </div>  
-</div>
-
+<h1>Wallet Balance: ${{wallet.Balance}}</h1>
 
 <!--Add Transaction-->
-<!-- <div>
+<div>
   <input type="text" name="transactionid" placeholder="Transaction ID" [(ngModel)]="transaction.Id"><br>
   <input type="text" name="credit/debit" placeholder="Enter Credit/Debit" [(ngModel)]="transaction.Amount"><br>
   <input type="text" name="description" placeholder="Enter Short Description" [(ngModel)]="transaction.Description"><br>
   <input type="text" name="customer" placeholder="Enter CustomerId" [(ngModel)]="transaction.CustomerId"><br>
   <input type="button" value="Submit Transaction!" (click)="addTransactions()">
 </div>
-<br><br> -->
+<br><br>
 
 <!--Update Wallet-->
-<!-- <div>
+<div>
   <input type="text" name="walletid" placeholder="Wallet ID" [(ngModel)]="wallet.Id"><br>
   <input type="text" name="customerid" placeholder="Customer ID" [(ngModel)]="wallet.CustomerId"><br>
   <input type="text" name="balance" placeholder="Balance" [(ngModel)]="wallet.Balance"><br>
   <input type="button" value="Submit Wallet Update!" (click)="updateWallet()">
 </div>
-<br><br> -->
+<br><br>
 
-<!--Add Customer-->
-<!-- <div>
-  <input type="text" name="customerid" placeholder="Customer ID" [(ngModel)]="customer.Id"><br>
-  <input type="text" name="fname" placeholder="FirstName" [(ngModel)]="customer.FirstName"><br>
-  <input type="text" name="lname" placeholder="Last Name" [(ngModel)]="customer.LastName"><br>
-  <input type="text" name="email" placeholder="Email" [(ngModel)]="customer.Email"><br>
-  <input type="text" name="isactive" placeholder="Active?" [(ngModel)]="customer.IsActive"><br>
-  <input type="button" value="Submit Customer!" (click)="addCustomer()">
-</div>
-<br><br> -->
 
 <!--Get Wallet Info-->
-<!-- <div>
+<div>
   <div>Wallet Id: {{wallet.Id}}</div><br>
   <div>Customer Id: {{wallet.CustomerId}}</div><br>
   <div>Balance: {{wallet.balance}}</div><br>
 </div>
-<br><br> -->
+<br><br>
 
-<!--Get Customer Info-->
-<!-- <div>
-    <div>Customer Id: {{customer.Id}}</div><br>
-    <div>First Name: {{customer.FirstName}}</div><br>
-    <div>Last namme: {{customer.LastName}}</div><br>
-    <div>Email: {{customer.Email}}</div><br>
-    <div>IsActive: {{customer.IsActive}}</div><br>
-</div>
-<br><br> -->
 
 <!--Get Transaction Info-->
 <p *ngFor="let t of transactions">

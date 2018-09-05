@@ -1,30 +1,44 @@
-<h2>Customer</h2>
+<div class="container">
+  <div>
+    <h2>Customer</h2>
+    <div>
+      <table class="table table-striped">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">First Name</th>
+          <th scope="col">E-Mail</th>
+        </tr>
+        <tr *ngFor="let customer of customers">
+          <td>{{customer.Id}}</td>
+          <td>{{customer.FirstName}}</td>
+          <td>{{customer.LastName}}</td>
+          <td>{{customer.Email}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div>
+  <form>
+    <div class="form-group">
+      <div class="col-xs-3">
+        <label for="fName">First Name</label>
+        <input type="text" class="form-control" [(ngModel)]="customerToAdd.FirstName" name="FirstName" id="fName"/>
+      </div>
+      <div class="col-xs-3">
+        <label for="lName">Last Name</label>
+        <input type="text" class="form-control" [(ngModel)]="customerToAdd.LastName" name="LastName" id="lName" />
+      </div>
+      <div class="col-xs-3">
+        <label for="email">E-Mail</label>
+        <input type="text" class="form-control" [(ngModel)]="customerToAdd.Email" name="EMAIL" id="email"/>
+      </div>
+      <div class="col-xs-3">
+        <label for="wallID">Wallet Id</label>
+        <input type="text" class="form-control" [(ngModel)]="customerToAdd.WalletId" name="walletID" id="wallID"/>
+      </div>
+      </div>
+      <input type="button" value="Add Customer" (click)="addCustomer()" class="btn btn-dark"  />
+  </form>
 
-  <div *ngFor="let customer of customers">
-  Id: {{customer.Id}}, FirstName: {{customer.FirstName}}, LastName: {{customer.LastName}}, Email: {{customer.Email}}
-</div> 
-
-
-<!-- <div>
-    Id:
-   <input type="text" [(ngModel)]="customer.Id" /> 
-    FirstName: <input type="text" [(ngModel)]="customer.FirstName" /> 
-    LastLame: <input type="text" [(ngModel)]="customer.LastName" />
-    <input type="button" value="Edit Customer" (click)="updateCustomer()" /> 
-  </div> -->
-  
- <!-- <h2>List of Customers</h2>
-<div *ngFor="let aCustomer of customers" (click)="deleteCustomer(aCustomer.Id)">
-  Id: {{aCustomer.Id}} => Name: {{aCustomer.Lastname}}, {{aCustomer.Firstname}}
-</div> -->
-
- <div>
-  FirstName: <input type="text" [(ngModel)]="customerToAdd.FirstName" /><br>
-  LastName: <input type="text" [(ngModel)]="customerToAdd.LastName" /> <br>
-  Email: <input type="text" [(ngModel)]="customerToAdd.Email" /><br>
-  WalletId: <input type="text" [(ngModel)]="customerToAdd.WalletId" /><br>
-  <input type="button" value="Add Customer" (click)="addCustomer()" />
-</div> 
-<!-- <p>
-  {{customerToAdd.FirstName}}
-</p>  -->
+</div>
+  </div>

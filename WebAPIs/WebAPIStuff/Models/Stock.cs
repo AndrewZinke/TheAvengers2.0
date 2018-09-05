@@ -28,16 +28,10 @@ namespace WebAPIStuff.Models
 
         //}
 
-<<<<<<< HEAD
-        //public void addShare(Share share)
-        //{
-        //    shares.Add(share);
-        //}
-=======
+
         public void sellShare()
         {
             shares--;
         }
->>>>>>> f5503442ca127883fd584267b5d973bc99abadb3
     }
 }
