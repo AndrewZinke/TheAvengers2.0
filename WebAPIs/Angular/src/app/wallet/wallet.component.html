@@ -1,41 +1,83 @@
-<div>
-
+<div class="container">
+  <h2>Wallet</h2>
+  <form>
+    <div class="form-group container">
+      <div class="col-xs-3">
+        <label for="tranID">Transaction ID</label>
+        <input type="text" class="form-control" name="transactionid" placeholder="Transaction ID" [(ngModel)]="transaction.Id" id="tranID" />
+      </div>
+      <div class="col-xs-3">
+        <label for="cd">Credit or Debit</label>
+        <input type="text" class="form-control" name="credit/debit" placeholder="Enter Credit/Debit" [(ngModel)]="transaction.Amount" id="cd" />
+      </div>
+      <div class="col-xs-3">
+        <label for="desc">Description</label>
+        <input type="text" class="form-control" name="description" placeholder="Enter Short Description" [(ngModel)]="transaction.Description" id="desc" />
+      </div>
+      <div class="col-xs-3">
+        <label for="cust">Customer ID</label>
+        <input type="text" class="form-control" name="customer" placeholder="Enter CustomerId" [(ngModel)]="transaction.CustomerId" id="cust" />
+      </div>
+    </div>
+    <input type="button" class="btn btn-dark" value="Submit Transaction!" (click)="addTransactions()"/>
+  </form>
 </div>
-<h1>Wallet Balance: ${{wallet.Balance}}</h1>
 
-<!--Add Transaction-->
-<div>
-  <input type="text" name="transactionid" placeholder="Transaction ID" [(ngModel)]="transaction.Id"><br>
-  <input type="text" name="credit/debit" placeholder="Enter Credit/Debit" [(ngModel)]="transaction.Amount"><br>
-  <input type="text" name="description" placeholder="Enter Short Description" [(ngModel)]="transaction.Description"><br>
-  <input type="text" name="customer" placeholder="Enter CustomerId" [(ngModel)]="transaction.CustomerId"><br>
-  <input type="button" value="Submit Transaction!" (click)="addTransactions()">
+<div style="margin:2em"></div>
+
+<div class="container">
+  <form>
+    <div class="form-group container">
+      <div class="col-xs-3">
+        <label for="wID">Wallet ID</label>
+        <input type="text" class="form-control" name="walletid" placeholder="Wallet ID" [(ngModel)]="wallet.Id" id="wID"/>
+      </div>
+      <div class="col-xs-3">
+        <label for="custID">Customer ID</label>
+        <input type="text" class="form-control" name="customerid" placeholder="Customer ID" [(ngModel)]="wallet.CustomerId" id="custID" />
+      </div>
+      <div class="col-xs-3">
+        <label for="bal">Balance</label>
+        <input type="text" class="form-control" name="balance" placeholder="Balance" [(ngModel)]="wallet.Balance" id="bal" />
+      </div>
+    </div>
+    <input type="button" class="btn btn-dark" value="Submit Wallet Update!" (click)="updateWallet()" />
+  </form>
 </div>
-<br><br>
 
-<!--Update Wallet-->
-<div>
-  <input type="text" name="walletid" placeholder="Wallet ID" [(ngModel)]="wallet.Id"><br>
-  <input type="text" name="customerid" placeholder="Customer ID" [(ngModel)]="wallet.CustomerId"><br>
-  <input type="text" name="balance" placeholder="Balance" [(ngModel)]="wallet.Balance"><br>
-  <input type="button" value="Submit Wallet Update!" (click)="updateWallet()">
+<div style="margin:2em"></div>
+
+<div class="container">
+  <h2>Wallet Info</h2>
+  <div>
+    <table class="table">
+      <tr>
+        <th>Wallet Id: {{wallet.Id}}</th>
+        <th>Customer Id: {{wallet.CustomerId}}</th>
+        <th>Balance: {{wallet.balance}}</th>
+      </tr>
+    </table>
+  </div>
 </div>
-<br><br>
 
+<div style="margin:2em"></div>
 
-<!--Get Wallet Info-->
-<div>
-  <div>Wallet Id: {{wallet.Id}}</div><br>
-  <div>Customer Id: {{wallet.CustomerId}}</div><br>
-  <div>Balance: {{wallet.balance}}</div><br>
+<div class="container">
+  <h2>Transaction Info</h2>
+  <div>
+    <table class="table table-striped">
+      <tr>
+        <th scope="col">Transaction ID</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Description</th>
+      </tr>
+      <tr *ngFor="let t of transactions">
+        <td>{{transaction.id}}</td>
+        <td>{{transaction.Amount}}</td>
+        <td>{{transaction.Description}}</td>
+      </tr>
+    </table>
+  </div>
 </div>
-<br><br>
 
-
-<!--Get Transaction Info-->
-<p *ngFor="let t of transactions">
-    Transaction ID: {{transaction.id}}
-    Amount: {{transaction.Amount}}
-    Description: {{transaction.Description}}
-</p>  
 
