@@ -271,6 +271,10 @@
     <Compile Include="Migrations\201809050306539_idk.Designer.cs">
       <DependentUpon>201809050306539_idk.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809050205418_pleasework.cs" />
+    <Compile Include="Migrations\201809050205418_pleasework.Designer.cs">
+      <DependentUpon>201809050205418_pleasework.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -283,11 +287,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Repositories\StockDb.cs" />
+<<<<<<< HEAD
     <Compile Include="Repositories\ShareRepo.cs" />
     <Compile Include="Repositories\StockRepo.cs" />
     <Compile Include="Repositories\TransactionRepo.cs" />
     <Compile Include="Repositories\WalletRepository.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
+=======
+>>>>>>> f5503442ca127883fd584267b5d973bc99abadb3
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -417,6 +424,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809050306539_idk.resx">
       <DependentUpon>201809050306539_idk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809050205418_pleasework.resx">
+      <DependentUpon>201809050205418_pleasework.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

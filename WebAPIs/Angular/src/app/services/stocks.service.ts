@@ -36,8 +36,6 @@ export class StocksService {
       PPS: newStock.PPS,
       low: newStock.low,
       high: newStock.high,
-      change: newStock.change,
-      perChange: newStock.perChange,
       shares: newStock.shares
     };
     return this.client.post<Stocks>(this.url, body, { headers });
@@ -52,8 +50,6 @@ export class StocksService {
       PPS: stock.PPS,
       low: stock.low,
       high: stock.high,
-      change: stock.change,
-      perChange: stock.perChange,
       shares: stock.shares
     };
     return this.client.put<Stocks>(this.url + '/' + stock.id, body, { headers });

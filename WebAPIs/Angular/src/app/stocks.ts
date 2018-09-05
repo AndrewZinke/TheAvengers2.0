@@ -6,8 +6,6 @@ export class Stocks {
   symbol: string;
   low: number;
   high: number;
-  change: number;
-  perChange: number;
   shares: number;
 
   constructor() {}

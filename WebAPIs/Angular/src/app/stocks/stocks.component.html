@@ -1,16 +1,37 @@
-<p>
-  stocks works!
-</p>
-<h2>Add A Stock</h2>
-<div>
-  Name: <input type="text" [(ngModel)]="newStock.name" />
-  Symbol: <input type="text" [(ngModel)]="customerToAdd.Firstname" />
-  Price Per Share: <input type="text" [(ngModel)]="customerToAdd.Lastname" />
-  <input type="button" value="Add Customer" (click)="addCustomer()" />
-</div>
+<div class="container">
+  <h2>Add A Stock</h2>
+  <form>
+    <div class="form-group">
+      <div class="col-xs-3">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="JAL Inc." [(ngModel)]="newStock.name" name="name" /> <br />
+      </div>
+      <div class="col-xs-3">
+        <label for="sym">Symbol</label>
+        <input type="text" class="form-control" id="sym" placeholder="JAL" [(ngModel)]="newStock.symbol" name="symbol" />
+      </div><br />
+      <div class="col-xs-3">
+        <label for="pps">Price Per Share</label>
+        <input type="number" class="form-control" id="pps" [(ngModel)]="newStock.PPS" name="pps" />
+      </div><br />
+      <div class="col-xs-3">
+        <label for="shares">Shares</label>
+        <input type="number" class="form-control" id="shares" [(ngModel)]="newStock.shares" name="shares" />
+      </div><br />
+      <div class="col-xs-3">
+        <label for="high">High</label>
+        <input type="number" class="form-control" id="high" [(ngModel)]="newStock.high" name="high" />
+      </div><br />
+      <div class="col-xs-3">
+        <label for="low">Low</label>
+        <input type="number" class="form-control" id="low" [(ngModel)]="newStock.low" name="low" />
+      </div><br />
+    </div>
+    <input type="button" class="btn btn-dark" value="Add Stock" (click)="addStock()" />
+  </form>
 
-
-<h2>Avaliable Stocks</h2>
-<div *ngFor="let aStock of Stocks">
-  Id: {{aStock.Id}} => Name: {{aStock.name}} => Symbol: {{aStock.symbol}}
+  <h2>Avaliable Stocks</h2>
+  <div *ngFor="let aStock of stocks">
+    Id: {{aStock.Id}} => Name: {{aStock.name}} => Symbol: {{aStock.symbol}}
+  </div>
 </div>

@@ -14,6 +14,7 @@ using System.Web.Http.Cors;
 
 namespace WebAPIStuff.Controllers
 {
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class StocksController : ApiController
     {
         private StockDb db = new StockDb();

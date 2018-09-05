@@ -20,10 +20,7 @@ namespace WebAPIStuff.Models
         public decimal low { get; set; }
         [Display(Name = "High")]
         public decimal high { get; set; }
-        [Display(Name = "Change")]
-        public decimal change { get; set; }
-        [Display(Name = "Percent Change")]
-        public double perChange { get; set; }
+        [Display(Name = "Shares")]
         public int shares { get; set; }
 
         //public Stock()
@@ -31,9 +28,16 @@ namespace WebAPIStuff.Models
 
         //}
 
+<<<<<<< HEAD
         //public void addShare(Share share)
         //{
         //    shares.Add(share);
         //}
+=======
+        public void sellShare()
+        {
+            shares--;
+        }
+>>>>>>> f5503442ca127883fd584267b5d973bc99abadb3
     }
 }
